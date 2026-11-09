@@ -6,42 +6,43 @@ name: Verify Decide (reusable)
 # via needs: — so nothing downstream can end up disagreeing about whether the
 # full suite is required for this commit.
 
-on:
-  workflow_call:
-    outputs:
-      lifecycle-ready:
-        value: ${{ jobs.decide.outputs.lifecycle-ready }}
-      run-build:
-        value: ${{ jobs.decide.outputs.run-build }}
-      run-unit-tests:
-        value: ${{ jobs.decide.outputs.run-unit-tests }}
-      run-scalpel-report:
-        value: ${{ jobs.decide.outputs.run-scalpel-report }}
-      run-integration:
-        value: ${{ jobs.decide.outputs.run-integration }}
-      run-extras:
-        value: ${{ jobs.decide.outputs.run-extras }}
-      run-sdk:
-        value: ${{ jobs.decide.outputs.run-sdk }}
-      run-cli:
-        value: ${{ jobs.decide.outputs.run-cli }}
-      run-ard-conformance:
-        value: ${{ jobs.decide.outputs.run-ard-conformance }}
-      run-agent-quickstart:
-        value: ${{ jobs.decide.outputs.run-agent-quickstart }}
-      run-go-sdk-freshness:
-        value: ${{ jobs.decide.outputs.run-go-sdk-freshness }}
-      run-operator:
-        value: ${{ jobs.decide.outputs.run-operator }}
-      run-console-plugin:
-        value: ${{ jobs.decide.outputs.run-console-plugin }}
-      run-docs:
-        value: ${{ jobs.decide.outputs.run-docs }}
-      scalpel-enabled:
-        value: ${{ jobs.decide.outputs.scalpel-enabled }}
-      scalpel-base-branch:
-        value: ${{ jobs.decide.outputs.scalpel-base-branch }}
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     outputs:
+#       lifecycle-ready:
+#         value: ${{ jobs.decide.outputs.lifecycle-ready }}
+#       run-build:
+#         value: ${{ jobs.decide.outputs.run-build }}
+#       run-unit-tests:
+#         value: ${{ jobs.decide.outputs.run-unit-tests }}
+#       run-scalpel-report:
+#         value: ${{ jobs.decide.outputs.run-scalpel-report }}
+#       run-integration:
+#         value: ${{ jobs.decide.outputs.run-integration }}
+#       run-extras:
+#         value: ${{ jobs.decide.outputs.run-extras }}
+#       run-sdk:
+#         value: ${{ jobs.decide.outputs.run-sdk }}
+#       run-cli:
+#         value: ${{ jobs.decide.outputs.run-cli }}
+#       run-ard-conformance:
+#         value: ${{ jobs.decide.outputs.run-ard-conformance }}
+#       run-agent-quickstart:
+#         value: ${{ jobs.decide.outputs.run-agent-quickstart }}
+#       run-go-sdk-freshness:
+#         value: ${{ jobs.decide.outputs.run-go-sdk-freshness }}
+#       run-operator:
+#         value: ${{ jobs.decide.outputs.run-operator }}
+#       run-console-plugin:
+#         value: ${{ jobs.decide.outputs.run-console-plugin }}
+#       run-docs:
+#         value: ${{ jobs.decide.outputs.run-docs }}
+#       scalpel-enabled:
+#         value: ${{ jobs.decide.outputs.scalpel-enabled }}
+#       scalpel-base-branch:
+#         value: ${{ jobs.decide.outputs.scalpel-base-branch }}
+# 
 permissions:
   contents: read
 

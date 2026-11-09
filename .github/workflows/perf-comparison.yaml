@@ -1,36 +1,37 @@
 name: Product-neutral Schema Registry Comparison
 
-on:
-  workflow_dispatch:
-    inputs:
-      operation:
-        description: Product-neutral Confluent-compatible operation
-        required: true
-        default: READ_ID
-        type: choice
-        options:
-          - READ_ID
-          - READ_VERSION
-          - REGISTER_NEW_SUBJECT
-          - REGISTER_NEW_VERSION
-          - REGISTER_IDEMPOTENT
-          - COMPATIBILITY
-      repetitions:
-        description: Measured repetitions per product (5 required for published claims)
-        required: true
-        default: "5"
-        type: string
-      users:
-        description: Concurrent clients per run
-        required: true
-        default: "100"
-        type: string
-      seed-schemas:
-        description: Seeded subjects per run
-        required: true
-        default: "1000"
-        type: string
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       operation:
+#         description: Product-neutral Confluent-compatible operation
+#         required: true
+#         default: READ_ID
+#         type: choice
+#         options:
+#           - READ_ID
+#           - READ_VERSION
+#           - REGISTER_NEW_SUBJECT
+#           - REGISTER_NEW_VERSION
+#           - REGISTER_IDEMPOTENT
+#           - COMPATIBILITY
+#       repetitions:
+#         description: Measured repetitions per product (5 required for published claims)
+#         required: true
+#         default: "5"
+#         type: string
+#       users:
+#         description: Concurrent clients per run
+#         required: true
+#         default: "100"
+#         type: string
+#       seed-schemas:
+#         description: Seeded subjects per run
+#         required: true
+#         default: "1000"
+#         type: string
+# 
 permissions:
   contents: read
 

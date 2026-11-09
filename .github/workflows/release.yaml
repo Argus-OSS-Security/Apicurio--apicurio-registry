@@ -2,17 +2,18 @@ name: Release Workflow
 # Found by this name to learn who ran the release: the workflows it triggers
 # run as apicurio-ci (reusable-notify.yaml).
 run-name: Release ${{ inputs.release-version }}
-on:
-  workflow_dispatch:
-    inputs:
-      release-version:
-        description: Version being released
-        required: true
-      branch:
-        description: Branch to release from (main for minor releases, X.Y.x for patches)
-        required: true
-        default: main
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       release-version:
+#         description: Version being released
+#         required: true
+#       branch:
+#         description: Branch to release from (main for minor releases, X.Y.x for patches)
+#         required: true
+#         default: main
+# 
 permissions:
   contents: read
 

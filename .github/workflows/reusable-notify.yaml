@@ -22,33 +22,34 @@ name: Reusable Notify
 # release.yaml: its run named "Release <version>", or the latest run when
 # there is no version.
 
-on:
-  workflow_call:
-    inputs:
-      results:
-        description: The caller's needs context, as toJSON(needs)
-        required: true
-        type: string
-      version:
-        description: Version being released, named in the message; empty if there is none
-        type: string
-        default: ''
-      notify-success:
-        description: Post success to the general channel
-        type: boolean
-        default: false
-      success-text:
-        description: The success message, instead of "<workflow> finished for <version>"
-        type: string
-        default: ''
-    secrets:
-      SLACK_USER_MAP:
-        required: false
-      SLACK_IMPORTANT_NOTIFICATION_WEBHOOK:
-        required: false
-      SLACK_GENERAL_NOTIFICATION_WEBHOOK:
-        required: false
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       results:
+#         description: The caller's needs context, as toJSON(needs)
+#         required: true
+#         type: string
+#       version:
+#         description: Version being released, named in the message; empty if there is none
+#         type: string
+#         default: ''
+#       notify-success:
+#         description: Post success to the general channel
+#         type: boolean
+#         default: false
+#       success-text:
+#         description: The success message, instead of "<workflow> finished for <version>"
+#         type: string
+#         default: ''
+#     secrets:
+#       SLACK_USER_MAP:
+#         required: false
+#       SLACK_IMPORTANT_NOTIFICATION_WEBHOOK:
+#         required: false
+#       SLACK_GENERAL_NOTIFICATION_WEBHOOK:
+#         required: false
+# 
 permissions:
   actions: read
 

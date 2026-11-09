@@ -20,12 +20,13 @@ name: Performance Tests (main)
 # perf-tests/scripts/check-thresholds.py for the rationale. A failed run is posted to the general
 # Slack channel.
 
-on:
-  schedule:
-    - cron: '0 2 * * *'
-  workflow_dispatch:
-
-# A manual run supersedes one in progress, so two never compete for runners.
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#     - cron: '0 2 * * *'
+#   workflow_dispatch:
+# 
+# # A manual run supersedes one in progress, so two never compete for runners.
 concurrency:
   group: perf-main
   cancel-in-progress: true

@@ -1,31 +1,32 @@
 name: PR Lifecycle
 
-on:
-  pull_request_target:
-    types: [opened, reopened, synchronize, ready_for_review, converted_to_draft, labeled, unlabeled]
-    branches: [main, '3.3.x']
-  pull_request_review:
-    types: [submitted]
-  issue_comment:
-    types: [created]
-  workflow_run:
-    # Review Relay (review-relay.yaml) is only for the review-relay job.
-    workflows: ["Verify", "Quick Check", "Review Relay"]
-    # requested and in_progress are only for the gate-status job, so the
-    # Verification Gate goes pending as soon as a Verify run exists and again
-    # when an attempt actually starts. in_progress is what catches a re-run
-    # attempt and a fork run that was waiting for approval, neither of which
-    # is a newly requested run. test-result handles completed only.
-    types: [requested, in_progress, completed]
-  workflow_dispatch:
-    inputs:
-      pr_number:
-        description: PR number to reconcile
-        required: true
-        type: number
-  schedule:
-    - cron: '17 */6 * * *'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request_target:
+#     types: [opened, reopened, synchronize, ready_for_review, converted_to_draft, labeled, unlabeled]
+#     branches: [main, '3.3.x']
+#   pull_request_review:
+#     types: [submitted]
+#   issue_comment:
+#     types: [created]
+#   workflow_run:
+#     # Review Relay (review-relay.yaml) is only for the review-relay job.
+#     workflows: ["Verify", "Quick Check", "Review Relay"]
+#     # requested and in_progress are only for the gate-status job, so the
+#     # Verification Gate goes pending as soon as a Verify run exists and again
+#     # when an attempt actually starts. in_progress is what catches a re-run
+#     # attempt and a fork run that was waiting for approval, neither of which
+#     # is a newly requested run. test-result handles completed only.
+#     types: [requested, in_progress, completed]
+#   workflow_dispatch:
+#     inputs:
+#       pr_number:
+#         description: PR number to reconcile
+#         required: true
+#         type: number
+#   schedule:
+#     - cron: '17 */6 * * *'
+# 
 permissions:
   actions: write
   contents: write

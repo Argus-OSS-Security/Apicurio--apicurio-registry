@@ -1,28 +1,29 @@
 name: Publish Images
 
-on:
-  workflow_dispatch:
-  workflow_call:
-    inputs:
-      image-tag:
-        type: string
-        required: true
-        description: 'Docker image tag (commit SHA)'
-      snapshot-tag:
-        type: string
-        required: false
-        default: 'latest-snapshot'
-        description: 'Snapshot tag prefix (e.g. latest-snapshot or 3.3.x-snapshot)'
-    secrets:
-      DOCKERHUB_USERNAME:
-        required: true
-      DOCKERHUB_PASSWORD:
-        required: true
-      QUAY_USERNAME:
-        required: true
-      QUAY_PASSWORD:
-        required: true
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#   workflow_call:
+#     inputs:
+#       image-tag:
+#         type: string
+#         required: true
+#         description: 'Docker image tag (commit SHA)'
+#       snapshot-tag:
+#         type: string
+#         required: false
+#         default: 'latest-snapshot'
+#         description: 'Snapshot tag prefix (e.g. latest-snapshot or 3.3.x-snapshot)'
+#     secrets:
+#       DOCKERHUB_USERNAME:
+#         required: true
+#       DOCKERHUB_PASSWORD:
+#         required: true
+#       QUAY_USERNAME:
+#         required: true
+#       QUAY_PASSWORD:
+#         required: true
+# 
 permissions:
   contents: read
 

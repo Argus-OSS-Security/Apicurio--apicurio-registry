@@ -15,9 +15,10 @@ name: Verify Docs (reusable)
 # is still built with Antora 2.3: only 3.x has a JSON log, which is what makes
 # the comparison with the base possible.
 
-on:
-  workflow_call: { }
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call: { }
+# 
 permissions:
   contents: read
 

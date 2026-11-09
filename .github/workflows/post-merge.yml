@@ -12,16 +12,17 @@ name: Post-Merge
 # branches filter below also matches a PR whose head branch is called main or
 # 3.3.x. Keep the filter in step with BRANCHES in post-merge.js.
 
-on:
-  workflow_run:
-    workflows: ["Verify"]
-    types: [completed]
-    branches: [main, '3.3.x']
-
-# One event at a time, so two completed runs can't both find no issue and open
-# one each. queue: max keeps every waiting event: with the default queue of
-# one, a third event would cancel the one waiting, and its transition would be
-# lost.
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_run:
+#     workflows: ["Verify"]
+#     types: [completed]
+#     branches: [main, '3.3.x']
+# 
+# # One event at a time, so two completed runs can't both find no issue and open
+# # one each. queue: max keeps every waiting event: with the default queue of
+# # one, a third event would cancel the one waiting, and its transition would be
+# # lost.
 concurrency:
   group: post-merge
   cancel-in-progress: false

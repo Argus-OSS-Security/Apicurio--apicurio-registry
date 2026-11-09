@@ -1,24 +1,25 @@
 name: Unit Tests
 
-on:
-  workflow_call:
-    inputs:
-      java-version:
-        type: string
-        default: '21'
-      image-tag:
-        type: string
-        required: true
-        description: 'Build artifact identifier (commit SHA)'
-      scalpel-enabled:
-        type: string
-        default: 'false'
-        description: 'Decide output: false on push to main or when the ci/disable-scalpel label is set'
-      scalpel-base-branch:
-        type: string
-        default: ''
-        description: 'Decide output: origin/<PR base ref>, empty when Scalpel is off or the ref is missing'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       java-version:
+#         type: string
+#         default: '21'
+#       image-tag:
+#         type: string
+#         required: true
+#         description: 'Build artifact identifier (commit SHA)'
+#       scalpel-enabled:
+#         type: string
+#         default: 'false'
+#         description: 'Decide output: false on push to main or when the ci/disable-scalpel label is set'
+#       scalpel-base-branch:
+#         type: string
+#         default: ''
+#         description: 'Decide output: origin/<PR base ref>, empty when Scalpel is off or the ref is missing'
+# 
 permissions:
   contents: read
 

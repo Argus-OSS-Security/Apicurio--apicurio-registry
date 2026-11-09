@@ -1,13 +1,14 @@
 name: Release Release Notes
-on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Release tag name'
-        required: true
-  release:
-    types: [ released ]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       tag:
+#         description: 'Release tag name'
+#         required: true
+#   release:
+#     types: [ released ]
+# 
 permissions:
   contents: write
 

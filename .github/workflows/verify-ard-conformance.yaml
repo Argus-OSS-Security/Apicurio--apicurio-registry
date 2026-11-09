@@ -12,17 +12,18 @@ name: ARD Conformance
 # commit SHA plus the spec version that commit states. Changing ARD_SPEC_REF must
 # be its own PR that records the spec delta and the new conformance result.
 
-on:
-  workflow_call:
-    inputs:
-      image-tag:
-        type: string
-        required: true
-        description: 'Build artifact identifier (commit SHA)'
-  schedule:
-    - cron: '0 5 * * *'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       image-tag:
+#         type: string
+#         required: true
+#         description: 'Build artifact identifier (commit SHA)'
+#   schedule:
+#     - cron: '0 5 * * *'
+#   workflow_dispatch:
+# 
 permissions:
   contents: read
 

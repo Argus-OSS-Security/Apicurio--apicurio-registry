@@ -2,17 +2,18 @@ name: Release Operator
 # Triggered by Release Images workflow after all operand images are pushed,
 # ensuring correct ordering without a polling loop. Can also be dispatched
 # manually for re-runs.
-on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: Release tag name
-        required: true
-      run_tests:
-        description: Run tests using the release artifacts
-        type: boolean
-        default: true
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       tag:
+#         description: Release tag name
+#         required: true
+#       run_tests:
+#         description: Run tests using the release artifacts
+#         type: boolean
+#         default: true
+# 
 permissions:
   contents: read
 

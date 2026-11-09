@@ -24,33 +24,34 @@ name: Classify
 # body, labels, changed file paths, linked issues) and repository history
 # through the API. Nothing from the PR is executed.
 
-on:
-  issues:
-    types: [opened, edited]
-  pull_request_target:
-    types: [opened, ready_for_review]
-    branches: [main, '3.3.x']
-  workflow_dispatch:
-    inputs:
-      # Typed as string rather than number so "not supplied" is unambiguously
-      # the empty string; an optional number input does not round-trip cleanly
-      # through the expression syntax used below.
-      issue:
-        description: Issue number to classify (leave empty when classifying a PR)
-        required: false
-        default: ''
-        type: string
-      pr:
-        description: PR number to classify (leave empty when classifying an issue)
-        required: false
-        default: ''
-        type: string
-      dry_run:
-        description: Print the scores without applying labels or assigning a reviewer
-        required: false
-        default: false
-        type: boolean
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   issues:
+#     types: [opened, edited]
+#   pull_request_target:
+#     types: [opened, ready_for_review]
+#     branches: [main, '3.3.x']
+#   workflow_dispatch:
+#     inputs:
+#       # Typed as string rather than number so "not supplied" is unambiguously
+#       # the empty string; an optional number input does not round-trip cleanly
+#       # through the expression syntax used below.
+#       issue:
+#         description: Issue number to classify (leave empty when classifying a PR)
+#         required: false
+#         default: ''
+#         type: string
+#       pr:
+#         description: PR number to classify (leave empty when classifying an issue)
+#         required: false
+#         default: ''
+#         type: string
+#       dry_run:
+#         description: Print the scores without applying labels or assigning a reviewer
+#         required: false
+#         default: false
+#         type: boolean
+# 
 permissions:
   contents: read
 

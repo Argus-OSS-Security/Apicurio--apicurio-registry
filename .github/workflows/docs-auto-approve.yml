@@ -18,11 +18,12 @@ name: Docs Auto-Approve
 # from the PR, and the job never checks out the run's head commit (see the
 # test-result job in pr-lifecycle.yml for why).
 
-on:
-  workflow_run:
-    workflows: ["Verify"]
-    types: [completed]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_run:
+#     workflows: ["Verify"]
+#     types: [completed]
+# 
 permissions:
   contents: read
 

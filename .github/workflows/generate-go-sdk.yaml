@@ -1,11 +1,12 @@
 name: Generate Go SDK
-on:
-  push:
-    paths:
-      - common/src/main/resources/META-INF/openapi.json
-      - common/src/main/resources/META-INF/openapi-v2.json
-    branches: [main, '3.3.x']
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     paths:
+#       - common/src/main/resources/META-INF/openapi.json
+#       - common/src/main/resources/META-INF/openapi-v2.json
+#     branches: [main, '3.3.x']
+# 
 permissions:
   contents: read
 

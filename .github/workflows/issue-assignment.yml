@@ -1,9 +1,10 @@
 name: Issue Assignment
 
-on:
-  issue_comment:
-    types: [created, edited]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   issue_comment:
+#     types: [created, edited]
+# 
 permissions:
   contents: read
   issues: write

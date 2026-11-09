@@ -1,12 +1,13 @@
 name: Update OpenAPI
-on:
-  push:
-    paths:
-      - common/src/main/resources/META-INF/openapi.json
-      - utils/tools/src/main/java/io/apicurio/registry/utils/tools/AddOpenApiAuth.java
-      - utils/tools/src/main/java/io/apicurio/registry/utils/tools/TransformOpenApiForClientGen.java
-    branches: [main, '3.3.x']
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     paths:
+#       - common/src/main/resources/META-INF/openapi.json
+#       - utils/tools/src/main/java/io/apicurio/registry/utils/tools/AddOpenApiAuth.java
+#       - utils/tools/src/main/java/io/apicurio/registry/utils/tools/TransformOpenApiForClientGen.java
+#     branches: [main, '3.3.x']
+# 
 permissions:
   contents: read
 

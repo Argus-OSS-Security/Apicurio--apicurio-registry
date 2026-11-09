@@ -6,13 +6,14 @@ name: Validate Docs & Playbook
 # changes to the playbook and its build, not a PR's docs content. A PR's docs
 # content is checked by verify.yaml's Docs Check job (verify-docs.yaml).
 
-on:
-  workflow_call: { }
-  pull_request:
-    branches: [main, '3.3.x']
-    paths:
-      - 'docs-playbook/**'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call: { }
+#   pull_request:
+#     branches: [main, '3.3.x']
+#     paths:
+#       - 'docs-playbook/**'
+# 
 permissions:
   contents: read
 

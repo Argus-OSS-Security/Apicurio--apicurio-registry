@@ -12,23 +12,24 @@ name: Scripts Tests
 # pull_request is the right trigger here: it checks out the PR head, and these
 # tests need nothing but a read-only token to run.
 
-on:
-  pull_request:
-    types: [opened, reopened, synchronize]
-    branches: [main, '3.3.x']
-    paths:
-      - '.github/scripts/**'
-      - '.github/actions/newer-than-published/**'
-      - '.github/pr-lifecycle.yml'
-      - '.github/workflows/scripts-tests.yaml'
-      # scalpel-summary.test.sh asserts the pinned Scalpel version still writes
-      # the report schema the summary reads, so a bump has to run these tests.
-      - '.mvn/extensions.xml'
-      # The same suite cross-checks the buildAllIfNoChanges pin behind the
-      # summary's empty-reactor full-build projections, so that setting has to
-      # run them too.
-      - '.mvn/maven.config'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     types: [opened, reopened, synchronize]
+#     branches: [main, '3.3.x']
+#     paths:
+#       - '.github/scripts/**'
+#       - '.github/actions/newer-than-published/**'
+#       - '.github/pr-lifecycle.yml'
+#       - '.github/workflows/scripts-tests.yaml'
+#       # scalpel-summary.test.sh asserts the pinned Scalpel version still writes
+#       # the report schema the summary reads, so a bump has to run these tests.
+#       - '.mvn/extensions.xml'
+#       # The same suite cross-checks the buildAllIfNoChanges pin behind the
+#       # summary's empty-reactor full-build projections, so that setting has to
+#       # run them too.
+#       - '.mvn/maven.config'
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

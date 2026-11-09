@@ -23,11 +23,12 @@ name: Review Relay
 # can change or remove this file for its own runs; the stale sweep and /retry
 # cover a relay that never arrives.
 
-on:
-  # No branches: filter here — pull_request_review does not support one.
-  pull_request_review:
-    types: [submitted, dismissed]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   # No branches: filter here — pull_request_review does not support one.
+#   pull_request_review:
+#     types: [submitted, dismissed]
+# 
 permissions: {}
 
 jobs:

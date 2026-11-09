@@ -8,14 +8,15 @@ name: AI Agent Registry Quickstart
 # The web console and registry MCP server images are latest-snapshot: this job tests the stack and
 # the quickstart, and their own changes are tested by the UI and MCP jobs.
 
-on:
-  workflow_call:
-    inputs:
-      image-tag:
-        type: string
-        required: true
-        description: 'Build artifact identifier (commit SHA)'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       image-tag:
+#         type: string
+#         required: true
+#         description: 'Build artifact identifier (commit SHA)'
+# 
 permissions:
   contents: read
 

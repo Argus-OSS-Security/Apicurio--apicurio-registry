@@ -24,11 +24,12 @@ name: Quick Check
 # verify.yaml's Verify Result job (also the source of the Verification Gate
 # status, the required check).
 
-on:
-  pull_request:
-    types: [opened, reopened, synchronize, labeled]
-    branches: [main, '3.3.x']
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     types: [opened, reopened, synchronize, labeled]
+#     branches: [main, '3.3.x']
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

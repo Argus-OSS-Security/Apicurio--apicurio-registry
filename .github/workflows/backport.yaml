@@ -14,11 +14,12 @@ name: Backport
 # resolution. Uses the apicurio-ci PAT so the backport PR triggers CI workflows
 # (PRs created by GITHUB_TOKEN do not trigger other workflows).
 
-on:
-  pull_request_target:
-    types: [closed, labeled]
-    branches: [main]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request_target:
+#     types: [closed, labeled]
+#     branches: [main]
+# 
 permissions:
   contents: write
   pull-requests: write

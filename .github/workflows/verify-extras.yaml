@@ -1,19 +1,20 @@
 name: Extra Tests
 
-on:
-  workflow_call:
-    inputs:
-      java-version:
-        type: string
-        default: '21'
-      node-version:
-        type: string
-        default: '20'
-      image-tag:
-        type: string
-        required: true
-        description: 'Docker image tag to test'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       java-version:
+#         type: string
+#         default: '21'
+#       node-version:
+#         type: string
+#         default: '20'
+#       image-tag:
+#         type: string
+#         required: true
+#         description: 'Docker image tag to test'
+# 
 permissions:
   contents: read
 

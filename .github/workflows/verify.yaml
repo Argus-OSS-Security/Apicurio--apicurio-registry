@@ -30,26 +30,27 @@ name: Verify
 # trusted/reviewed), then success or failure. See the Verify Result job for
 # why this is a status rather than the job's own check-run.
 
-on:
-  push:
-    branches: [main, '3.3.x']
-  # No labeled/unlabeled: a label change never alters the SHA, and a run it
-  # started cancelled the in-flight suite (the push run for that SHA) and then
-  # skipped everything, leaving a failed Verification Gate as the most recent
-  # check-run — which re-running could not fix, since the re-run replays the
-  # same label event. The one label Decide reads, orchestrator/disabled, is
-  # handled by the orchestrator re-running this workflow when a maintainer
-  # changes it (see handleLabelChange in pr-lifecycle.js).
-  pull_request:
-    types: [opened, reopened, synchronize]
-    branches: [main, '3.3.x']
-  # No pull_request_review: a review started a second run on a commit that
-  # already had one. For a trusted author that repeated a full suite that had
-  # already run, and every commit showed a (pull_request) and a
-  # (pull_request_review) set of checks. Reviews reach the orchestrator through
-  # review-relay.yaml instead, which re-runs this commit's run when the suite
-  # becomes required.
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [main, '3.3.x']
+#   # No labeled/unlabeled: a label change never alters the SHA, and a run it
+#   # started cancelled the in-flight suite (the push run for that SHA) and then
+#   # skipped everything, leaving a failed Verification Gate as the most recent
+#   # check-run — which re-running could not fix, since the re-run replays the
+#   # same label event. The one label Decide reads, orchestrator/disabled, is
+#   # handled by the orchestrator re-running this workflow when a maintainer
+#   # changes it (see handleLabelChange in pr-lifecycle.js).
+#   pull_request:
+#     types: [opened, reopened, synchronize]
+#     branches: [main, '3.3.x']
+#   # No pull_request_review: a review started a second run on a commit that
+#   # already had one. For a trusted author that repeated a full suite that had
+#   # already run, and every commit showed a (pull_request) and a
+#   # (pull_request_review) set of checks. Reviews reach the orchestrator through
+#   # review-relay.yaml instead, which re-runs this commit's run when the suite
+#   # becomes required.
+# 
 concurrency:
   # A retry of a push run (attempt 2 or later) gets a group of its own commit,
   # so it neither cancels the run of a newer push nor is cancelled by one: a
